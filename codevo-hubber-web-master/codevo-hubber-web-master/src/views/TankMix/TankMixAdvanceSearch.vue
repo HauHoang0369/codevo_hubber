@@ -6,19 +6,21 @@ import CustomSelectBox from '@/components/base/inputs/CustomSelectBox';
 import ButtonPrimaryDesktop from '@/components/base/inputs/ButtonPrimaryDesktop';
 import MixMarketsSelect from '@/components/TankMix/MixMarketsSelect';
 import MixProductsSelect from '@/components/TankMix/MixProductsSelect';
+import MixCropsSelect from '@/components/TankMix/MixCropsSelect';
 
 const store = useStore();
 
 const user = computed(() => store.getters.getUser);
 
 const selectedMarkets = ref([]);
+const selectedCrops = ref([])
 const selectedInternalProducts = ref([]);
 const selectedExternalProducts = ref([]);
 const externalProducers = ref([]);
 const ingredients = ref([]);
 const selectedIngredient = ref(null);
-const crops = ref([]);
-const selectedCrop = ref(null);
+// const crops = ref([]);
+// const selectedCrop = ref(null);
 
 const filteredMarkets = computed(() => {
   return selectedMarkets.value.filter((item) => item.id !== user.value.market.id);
@@ -30,6 +32,14 @@ const updateMarkets = (value) => {
 
 const removeMarket = (market) => {
   selectedMarkets.value = selectedMarkets.value.filter((item) => item.id !== market.id);
+}
+
+const updateCrops = (value) => {
+  selectedCrops.value = value;
+};
+
+const removeCrop = (crop) => {
+  selectedCrops.value = selectedCrops.value.filter((item) => item.id !== crop.id);
 }
 
 const updateSelectedInternalProducts = (value) => {
@@ -160,14 +170,30 @@ const removeExternalProduct = (product) => {
       </div>
 
       <div class="mb-15">
-        <CustomSelectBox
-          :selected-item="selectedCrop"
-          :options="crops"
-          :label="$t('TANK_MIX_FILTERS_VIEW_CROPS_CAPTION')"
-          item-key="id"
-          item-title="name"
-          @select="(value) => selectedCrop = value"
+        <MixCropsSelect
+          :selected="selectedCrops"
+          @select="(value) => updateCrops(value)"
         />
+
+        <div v-if="selectedCrops.length > 0" class="market-chip-list">
+          <v-chip
+            class="ma-2 market-chip"
+            text-color="white"
+            v-for="(item, index) in selectedCrops"
+            :key="index"
+          >
+            <span class="text-white text-md">
+              {{ item.name }}
+            </span>
+            <v-icon
+              big
+              right
+              @click.stop="removeCrop(item)"
+              class="pl-2 text-white"
+            >mdi-close</v-icon
+            >
+          </v-chip>
+        </div>
       </div>
 
       <div class="d-flex align-center justify-center w-100 mb-9">
