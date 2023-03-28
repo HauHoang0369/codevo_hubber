@@ -19,19 +19,19 @@ const user = computed(() => store.getters.getUser);
 
 const search = ref('');
 const showDropdown = ref(false);
-const crops = ref([]);
-const filteredCrops = ref([]);
-const cropEnvelope = ref({});
+const ingredients = ref([]);
+const filteredIngredients = ref([]);
+const ingredientEnvelope = ref({});
 const isLoading = ref(false);
 const page = ref(0);
-const selectedCrops = ref([]);
+const selectedIngredients = ref([]);
 
-const marketList = computed(() => {
+const ingredientList = computed(() => {
   if (search.value.length >= MIN_CHARACTERS_TO_QUERY) {
-    return filteredCrops.value;
+    return filteredIngredients.value;
   }
 
-  return crops.value
+  return ingredients.value
 })
 
 const openMenu = () => {
@@ -45,7 +45,7 @@ const closeMenu = () => {
 }
 
 const cancel = () => {
-  selectedCrops.value = props.selected;
+  selectedIngredients.value = props.selected;
   closeMenu();
 }
 
@@ -57,60 +57,50 @@ const onChange = (value) => {
 const debouncedSearch = debounce((value) => {
   if (value.length >= MIN_CHARACTERS_TO_QUERY) {
     page.value = 0;
-    filteredCrops.value = [];
-    searchCrops(true, value);
+    filteredIngredients.value = [];
+    searchIngredients(true, value);
   } else {
     isLoading.value = false;
   }
 }, [300]);
 
 const onSelect = (option) => {
-  if (option.id === user.value.market.id) {
-    return;
-  }
-
-  if (selectedCrops.value.find((item) => item.id === option.id)) {
-    selectedCrops.value = selectedCrops.value.filter((item) => item.id !== option.id);
+  if (selectedIngredients.value.find((item) => item.id === option.id)) {
+    selectedIngredients.value = selectedIngredients.value.filter((item) => item.id !== option.id);
   } else {
-    selectedCrops.value = [...selectedCrops.value, option];
+    selectedIngredients.value = [...selectedIngredients.value, option];
   }
 }
 
 const isSelected = (option) => {
-  if (option.id === user.value.market.id) {
-    return true;
-  }
-  return selectedCrops.value.some((item) => item.id === option.id);
+  return selectedIngredients.value.some((item) => item.id === option.id);
 }
 
-const searchCrops = async (initLoad, name = '') => {
+const searchIngredients = async (initLoad, name = '') => {
   isLoading.value = true;
 
   try {
-    const res = await new ProductService().service.searchCrops(
-      user.value.market.id,
-      user.value.contentLanguage.isoCode,
-      0,
-      name,
-      true
-    )
-    cropEnvelope.value = res;
+    const res = await new ProductService().service.searchIngredients({
+      marketId: user.value.market.id,
+    });
+
+    ingredientEnvelope.value = res;
 
     if (name) {
       if (initLoad) {
-        filteredCrops.value = res.content;
+        filteredIngredients.value = res.content;
       } else {
-        filteredCrops.value = [
-          ...crops.value,
+        filteredIngredients.value = [
+          ...ingredients.value,
           ...res.content
         ]
       }
     } else {
       if (initLoad) {
-        crops.value = res.content;
+        ingredients.value = res.content;
       } else {
-        crops.value = [
-          ...crops.value,
+        ingredients.value = [
+          ...ingredients.value,
           ...res.content
         ]
       }
@@ -129,9 +119,9 @@ const loadMore = async (e) => {
   const element = e.target;
 
   if (element.scrollHeight - element.offsetHeight - element.scrollTop < 1) {
-    if (cropEnvelope.value?.last === false) {
+    if (ingredientEnvelope.value?.last === false) {
       page.value += 1;
-      await searchCrops(
+      await searchIngredients(
         false,
         search.value.length >= MIN_CHARACTERS_TO_QUERY ? search.value : ''
       );
@@ -140,37 +130,37 @@ const loadMore = async (e) => {
 };
 
 const clearSelection = () => {
-  selectedCrops.value = [];
+  selectedIngredients.value = [];
 }
 
-const submitCrops = () => {
-  emit('select', selectedCrops.value);
+const submitIngredients = () => {
+  emit('select', selectedIngredients.value);
   closeMenu();
 }
 
 watch(
   () => props.selected,
   (newValue) => {
-    selectedCrops.value = [...newValue];
+    selectedIngredients.value = [...newValue];
   }
 )
 
 onMounted(() => {
-  searchCrops(true, '');
+  searchIngredients(true, '');
 })
 
 </script>
 
 <template>
-  <div class="mix-crops-select-container" v-click-outside="cancel">
+  <div class="mix-ingredients-select-container" v-click-outside="cancel">
     <div
       class="custom-select-box"
-      :class="{ disabled: crops.length === 0 }"
+      :class="{ disabled: ingredients.length === 0 }"
       @click="openMenu"
     >
       <div class="">
         <p class="select-label text-clamp-1">
-          {{ $t('TANK_MIX_FILTERS_VIEW_CROPS_CAPTION') }}
+          {{ $t('TANK_MIX_FILTERS_VIEW_INGREDIENTS_CAPTION') }}
         </p>
       </div>
 
@@ -184,7 +174,7 @@ onMounted(() => {
         <div>
           <div class="pl-4 mb-5">
             <SearchInput
-              :placeholder="$t('TANK_MIX_FILTERS_VIEW_CROPS_CAPTION')"
+              :placeholder="$t('TANK_MIX_SEARCH_INGREDIENT_CAPTION')"
               v-model="search"
               @updated="onChange"
             />
@@ -192,7 +182,7 @@ onMounted(() => {
 
           <div class="menu-list" @scroll="loadMore">
             <div
-              v-for="item in marketList"
+              v-for="item in ingredientList"
               :key="item.id"
               class="dropdown-menu-item text-clamp-1"
               @click="onSelect(item)"
@@ -224,7 +214,7 @@ onMounted(() => {
               <v-progress-circular indeterminate size="64"></v-progress-circular>
             </div>
 
-            <div v-if="marketList.length === 0 && !isLoading" class="text-center py-2">
+            <div v-if="ingredientList.length === 0 && !isLoading" class="text-center py-2">
               No Data
             </div>
           </div>
@@ -233,12 +223,12 @@ onMounted(() => {
 
           <div class="d-flex flex-column align-center justify-center">
             <span class="selected-count">
-              {{$t('TANK_MIX_SELECTED_CROPS_CAPTION').replace('{}', selectedCrops.length)}}
+              {{$t('TANK_MIX_SELECTED_INGREDIENTS_CAPTION').replace('{}', selectedIngredients.length)}}
             </span>
 
             <ButtonPrimaryDesktop
               class="confirm-btn mb-5"
-              @click="submitCrops"
+              @click="submitIngredients"
             >
               {{ $t('PORTAL_CONFIRM_TITLE') }}
             </ButtonPrimaryDesktop>
@@ -254,7 +244,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.mix-crops-select-container {
+.mix-ingredients-select-container {
   .custom-select-box {
     padding: 0 20px;
     opacity: 0.7;
@@ -286,7 +276,7 @@ onMounted(() => {
     .select-label {
       font-size: 16px;
       line-height: 18px;
-      font-weight: 300;
+      // font-weight: 300;
       color: $color-text;
       transition: all ease-in 0.2s;
 

@@ -992,7 +992,7 @@ class ProductRestV1Service {
     }
 
     let response = await this.client.get(
-      'productservice/v1/search/ingredients',
+      'productservice/v1/search/ingredient',
       config
     )
     return response.data
