@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="77px" height="88px" viewBox="0 0 77 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>79A9525E-C056-4879-88BB-0008B8948ED8</title>
+    <defs>
+        <path d="M23,13 L43.2415828,13 L43.2415828,13 L50.1207914,19.5 L57,26 L57,26 L57,59 C57,60.6568542 55.6568542,62 54,62 L23,62 C21.3431458,62 20,60.6568542 20,59 L20,16 C20,14.3431458 21.3431458,13 23,13 Z" id="path-1"></path>
+        <filter x="-86.5%" y="-53.1%" width="273.0%" height="230.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="2.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.753980007   0 0 0 0 0.824909527   0 0 0 0 0.966768569  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M43.2415828,13 L57,26 L45.2415828,26 C44.1370133,26 43.2415828,25.1045695 43.2415828,24 L43.2415828,13 L43.2415828,13 Z" id="path-3"></path>
+        <filter x="-141.7%" y="-137.1%" width="394.5%" height="410.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="D-Aggiungi-documento" transform="translate(-787.000000, -413.000000)">
+            <g id="Rectangle-2" transform="translate(729.000000, 408.000000)">
+                <g id="Icon/detailed/doc" transform="translate(58.000000, 5.500000)">
+                    <rect id="Rectangle" fill="#699EFF" opacity="0.2" x="7" y="7" width="62" height="62" rx="17"></rect>
+                    <g id="Rectangle">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke-opacity="0.268138112" stroke="#DDE9FF" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Path-19">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

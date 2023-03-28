@@ -1,0 +1,7 @@
+.v-snackbar__content {
+  .toast-msg {
+    &.error-text {
+      color: $color-p-bs !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.hubber-dropdown {
+  position: relative;
+
+  .v-input__control {
+    border-radius: 17px;
+    background-color: var(--white);
+  }
+
+  .visibility-options {
+    position: absolute;
+    margin-top: -20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 11px 2px rgb(0 0 0 / 10%);
+    background-color: var(--white);
+    width: 100%;
+    z-index: 1;
+  }
+}

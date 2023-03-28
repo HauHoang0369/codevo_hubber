@@ -1,0 +1,36 @@
+<script setup>
+import IconProducts from '@/assets/icons/icon-system-products@2x.png'
+</script>
+
+<template>
+  <!--  <div>-->
+  <img :src="IconProducts" class="sidebar-icon" />
+  <!--  </div>-->
+
+  <!--  <svg width="82" height="98" viewBox="0 0 82 98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
+  <!--    <defs>-->
+  <!--        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="79jtwd3c0c">-->
+  <!--            <stop stop-color="#00604B" offset="0%"/>-->
+  <!--            <stop stop-color="#0A3D31" offset="100%"/>-->
+  <!--        </linearGradient>-->
+  <!--        <filter x="-428.6%" y="-140%" width="957.1%" height="500%" filterUnits="objectBoundingBox" id="zj7rbm0q7a">-->
+  <!--            <feMorphology radius="3" in="SourceAlpha" result="shadowSpreadOuter1"/>-->
+  <!--            <feOffset dy="18" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>-->
+  <!--            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>-->
+  <!--            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0.376470588 0 0 0 0 0.294117647 0 0 0 0.3 0" in="shadowBlurOuter1"/>-->
+  <!--        </filter>-->
+  <!--        <path d="M22 26v1a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3v-1h14zm0-13v12H8V13h14zM17 0a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1a6 6 0 0 1 6 6H8a6 6 0 0 1 6-6h-1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h4z" id="5gjf7u1k7b"/>-->
+  <!--    </defs>-->
+  <!--    <g transform="translate(26 16)" fill="none" fill-rule="evenodd">-->
+  <!--        <use fill="#000" filter="url(#zj7rbm0q7a)" xlink:href="#5gjf7u1k7b"/>-->
+  <!--        <use fill="url(#79jtwd3c0c)" xlink:href="#5gjf7u1k7b"/>-->
+  <!--    </g>-->
+  <!--  </svg>-->
+</template>
+
+<style scoped>
+.sidebar-icon {
+  height: 30px;
+  width: 30px;
+}
+</style>

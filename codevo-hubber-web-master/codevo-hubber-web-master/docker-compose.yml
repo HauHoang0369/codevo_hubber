@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  hubberweb:
+    image: codevoita/products-hubber-v2-hubber-web-codevo:master
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true

@@ -1,0 +1,7 @@
+export { default as CommentForm } from './CommentForm.vue'
+export { default as DeletePost } from './DeletePost.vue'
+export { default as DropdownActions } from './DropdownActions.vue'
+export { default as NewPost } from './NewPost.vue'
+export { default as SocialWallFriends } from './SocialWallFriends.vue'
+export { default as SocialWallPost } from './SocialWallPost.vue'
+export { default as SocialWallPostComment } from './SocialWallPostComment.vue'

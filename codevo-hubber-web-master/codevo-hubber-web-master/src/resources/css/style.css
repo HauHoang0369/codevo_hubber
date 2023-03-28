@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Ubuntu:wght@300;400;500&display=swap');
+
+/*************************************
+ * Root
+ *************************************/
+:root {
+  --test: #ff0000;
+  --primary: #00604b;
+  --green: #015f4a;
+  --grey-dark: #a6acb5;
+  --grey: #e2e4e7;
+  --orange: #f0973a;
+  --rosso: #ff516e;
+  --background-blue: #f7f9fd;
+  --primary-dark: #0a3d31;
+  --text: #555454;
+  --background-green: #eaf5ef;
+  --background-active: #d4eeec;
+  --ambra: #ffdb72;
+  --celeste: #699eff;
+  --verde-acqua: #00b899;
+  --lilla: #a6a9ff;
+  --malva: #bf81b4;
+  --primary-70: #4c9081;
+  --white: #fff;
+  --p-mic: #b4458d;
+  --p-bs: #d50032;
+  --p-ot: #f1be48;
+  --p-ff: #249e6b;
+  --p-bif: #1d428a;
+  --p-wsn: #006a8e;
+  --black: #000;
+  --social-fb: #3b5998;
+  --p-bic: #1be0b3;
+  --social-lin: #4875b4;
+  --grey-teal: #5a988b;
+  --greyish-brown: #3d3d3d;
+  --dusty-orange: #f09435;
+  --faded-white: #f0f0f0;
+  --grey-80: #cccccc;
+  --fuel-yellow: #e6b523;
+  --cadet-blue: #b0bac9;
+  --alto: #d8d8d8;
+  --opal: #b2cbc5;
+  --persian-green: #009982;
+  --dusty-gray: #979797;
+
+  /* SWIPER */
+  --swiper-navigation-sides-offset: 0;
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-color: var(--grey-dark);
+}
+
+/*************************************
+ * Font families
+ *************************************/
+
+/*************************************
+ * Titles
+ *************************************/
+.Title-desktop-left {
+  font-family: Ubuntu, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--primary);
+}
+
+.Title-mobile-left-2 {
+  font-family: Ubuntu, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: var(--primary);
+}
+
+.Title-mobile-left {
+  font-family: Ubuntu, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: var(--primary);
+}
+
+.Symbol-OrganizerGroup-Title {
+  font-family: SFProText;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: var(--white);
+}
+
+.Paragraph-desktop-left {
+  font-family: Ubuntu, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+.Titolo-card-M {
+  font-family: Ubuntu, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+.-Bold-left-dark {
+  font-family: Ubuntu, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+.Paragraph-Mobile-left {
+  font-family: Ubuntu, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+.Mix-Verde {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--verde-acqua);
+}
+
+.Mix-Corallo {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--rosso);
+}
+
+.Mix-Ambra {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--fuel-yellow);
+}
+
+.CTA-light {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.78px;
+  text-align: center;
+  color: var(--white);
+}
+
+.CTA-dark {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.78px;
+  text-align: center;
+  color: var(--primary-dark);
+}
+
+.-bold-left-white {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+.-bold-left-green {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--primary);
+}
+
+.-bold-center-white {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--white);
+}
+
+.-bold-center-green {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--primary);
+}
+
+.Menu-mobile-grey {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+.-regular-left-white {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+.-regular-left-green {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--primary);
+}
+
+.-regular-left-dark {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+.-light-left-dark {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+.ParagraphRubikRightGray-2 {
+  font-family: Rubik;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: normal;
+  text-align: right;
+  color: var(--cadet-blue);
+}
+
+.ParagraphRubikCenterGray-2 {
+  font-family: Rubik;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--cadet-blue);
+}
+
+.Label-white {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+.Label-primary {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--primary);
+}
+
+.Label-grey-dark {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--grey-dark);
+}
+
+.Label-green {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--primary-dark);
+}
+
+.Leftorange {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: var(--orange);
+}
+
+.Leftgreen {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: var(--verde-acqua);
+}
+
+.Leftred {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: var(--rosso);
+}
+
+.-Light-left-dark {
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text);
+}
+
+/*************************************
+ * General
+ *************************************/
+* {
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--primary);
+}
+
+.hubber-circle {
+  margin: 0 auto;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-dark);
+}
+
+.accenti-title {
+  font-family: Ubuntu, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.continua-senza-regis {
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.78px;
+  text-align: center;
+  color: var(--primary-dark);
+  cursor: pointer;
+}
+
+.CTAbuttonprimary {
+  width: 161px;
+  height: 48px;
+  padding: 16px 20px;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px -6px rgba(0, 96, 75, 0.3);
+  background-image: linear-gradient(
+    to top,
+    var(--primary),
+    var(--primary-dark)
+  );
+
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.78px;
+  text-align: center;
+  color: var(--white);
+}
+
+/*************************************
+ * Main elements
+ *************************************/
+.wrapper {
+  background-color: var(--background-green);
+  height: 100%;
+}
+
+.c-app {
+  background-color: var(--background-green);
+}
+
+.main-container {
+  padding: 130px 180px 40px 180px;
+}
+
+.content {
+  padding-top: 40px;
+}
+
+/*************************************
+ * Login Form
+ *************************************/
+#login-form {
+  width: 612px;
+  height: auto;
+  padding: 35px 119px 46px;
+  border-radius: 30px;
+  box-shadow: 0 6px 11px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*************************************
+ * Register Form
+ *************************************/
+#register-form {
+  width: 612px;
+  height: auto;
+  padding: 35px 119px 46px;
+  border-radius: 30px;
+  box-shadow: 0 6px 11px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*************************************
+ * Inputs
+ *************************************/
+
+/* Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--grey-80);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*************************************
+ * Buttons - CTAs
+ *************************************/
+/* main button */
+.btn {
+  min-width: 244px;
+  width: auto;
+  height: 48px;
+  padding: 16px 20px;
+  border-radius: 24px;
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.78px;
+  text-align: center;
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 18px 40px -6px rgba(0, 96, 75, 0.3);
+  background-image: linear-gradient(
+    to top,
+    var(--primary),
+    var(--primary-dark)
+  );
+}
+
+.btn-primary:hover {
+}
+
+.btn-primary:active {
+  background-color: var(--primary-dark);
+  background-image: none;
+}
+
+.btn-primary:disabled {
+  background-color: var(--greyish-brown);
+  background-image: none;
+}
+
+/* Secondary button */
+.btn-secondary {
+  background-color: var(--orange);
+  color: var(--white);
+  box-shadow: 0 18px 40px -6px rgba(240, 151, 58, 0.2);
+  background-image: linear-gradient(to top, #f9c86c, var(--orange));
+}
+
+.btn-secondary:hover {
+}
+
+.btn-secondary:active {
+  background-color: var(--dusty-orange);
+  background-image: none;
+}
+
+.btn-secondary:disabled {
+  background-color: var(--faded-white);
+  background-image: none;
+}
+
+/* Light button */
+.btn-light {
+  background-color: var(--white);
+  color: var(--primary-dark);
+  box-shadow: 0 6px 11px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-light:hover {
+  color: var(--primary);
+}
+
+.btn-light:active {
+  color: var(--greyish-brown);
+}
+
+.btn-light:disabled {
+  background-color: var(--white);
+  color: var(--greyish-brown);
+}
+
+/* Simple button */
+.btn-simple {
+  color: var(--primary);
+}
+
+.btn-simple:hover {
+  color: var(--primary-dark);
+}
+
+.btn-simple:active {
+  color: var(--greyish-brown);
+}
+
+.btn-simple:disabled {
+  color: rgba(61, 61, 61, 0.5);
+}
+
+@media (max-width: 956px) {
+  .main-container {
+    padding: 100px 15px 40px 120px;
+  }
+}
+
+/* Social button */
