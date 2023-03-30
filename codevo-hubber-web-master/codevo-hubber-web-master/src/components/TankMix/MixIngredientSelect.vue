@@ -82,6 +82,7 @@ const searchIngredients = async (initLoad, name = '') => {
   try {
     const res = await new ProductService().service.searchIngredients({
       marketId: user.value.market.id,
+      name: name,
     });
 
     ingredientEnvelope.value = res;
@@ -155,7 +156,6 @@ onMounted(() => {
   <div class="mix-ingredients-select-container" v-click-outside="cancel">
     <div
       class="custom-select-box"
-      :class="{ disabled: ingredients.length === 0 }"
       @click="openMenu"
     >
       <div class="">
@@ -187,9 +187,10 @@ onMounted(() => {
               class="dropdown-menu-item text-clamp-1"
               @click="onSelect(item)"
             >
-              <div class="d-flex align-center">
+              <div style="width:98%" class="d-flex align-center">
                 <AuthImage
-                  :path="item.iconImageUrl"
+                  :showAvatar="true"
+                  :filename="item.name"
                   class="label-prefix-img"
                 ></AuthImage>
                 <span class="dropdown-menu-item__title">
@@ -264,9 +265,6 @@ onMounted(() => {
         color: $color-grey-light-1 !important;
       }
 
-      .selected-option__title {
-        color: $color-grey-dark;
-      }
     }
 
     &:hover {
@@ -279,23 +277,6 @@ onMounted(() => {
       // font-weight: 300;
       color: $color-text;
       transition: all ease-in 0.2s;
-
-      &.option-selected {
-        font-size: 12px;
-        font-weight: 300;
-        color: $color-text;
-      }
-    }
-
-    .selected-option {
-      display: flex;
-      align-items: center;
-
-      &__title {
-        font-size: 16px;
-        line-height: 18px;
-        color: $color-text;
-      }
     }
 
     .dropdown-icon {
@@ -360,6 +341,9 @@ onMounted(() => {
         &__title {
           font-size: 18px;
           color: $color-text;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         &:hover {

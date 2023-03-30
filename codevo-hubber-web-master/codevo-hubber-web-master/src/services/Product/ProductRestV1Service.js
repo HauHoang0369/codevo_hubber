@@ -979,13 +979,17 @@ class ProductRestV1Service {
     return response?.data || []
   }
 
-  async searchIngredients({ marketId, page = 0, hideLoader = true }) {
+  async searchIngredients({ marketId, page = 0, hideLoader = true, name='' }) {
     let config = { ...this.client.defaults }
 
     config.params = {
       page,
       marketId,
     }
+    if (name.length > 0) {
+      config.params['name']= name
+    }
+
 
     if (hideLoader) {
       config.headers['Hubber-Hide-Loading'] = true

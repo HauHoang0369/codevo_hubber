@@ -16,9 +16,6 @@ const selectedMarkets = ref([]);
 const selectedIngredients = ref([])
 const selectedInternalProducts = ref([]);
 const selectedExternalProducts = ref([]);
-const externalProducers = ref([]);
-const ingredients = ref([]);
-// const selectedIngredient = ref(null);
 const crops = ref([]);
 const selectedCrop = ref(null);
 
@@ -266,6 +263,11 @@ const removeExternalProduct = (product) => {
   .market-chip {
     background-color: var(--primary-70);
     margin: 0 !important;
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
 </style>
