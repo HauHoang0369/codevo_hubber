@@ -6,17 +6,19 @@ import CustomSelectBox from '@/components/base/inputs/CustomSelectBox';
 import ButtonPrimaryDesktop from '@/components/base/inputs/ButtonPrimaryDesktop';
 import MixMarketsSelect from '@/components/TankMix/MixMarketsSelect';
 import MixProductsSelect from '@/components/TankMix/MixProductsSelect';
+import MixIngredientSelect from '@/components/TankMix/MixIngredientSelect';
 
 const store = useStore();
 
 const user = computed(() => store.getters.getUser);
 
 const selectedMarkets = ref([]);
+const selectedIngredients = ref([])
 const selectedInternalProducts = ref([]);
 const selectedExternalProducts = ref([]);
 const externalProducers = ref([]);
 const ingredients = ref([]);
-const selectedIngredient = ref(null);
+// const selectedIngredient = ref(null);
 const crops = ref([]);
 const selectedCrop = ref(null);
 
@@ -30,6 +32,14 @@ const updateMarkets = (value) => {
 
 const removeMarket = (market) => {
   selectedMarkets.value = selectedMarkets.value.filter((item) => item.id !== market.id);
+}
+
+const updateIngredients = (value) => {
+  selectedIngredients.value = value;
+};
+
+const removeIngredient = (crop) => {
+  selectedIngredients.value = selectedIngredients.value.filter((item) => item.id !== crop.id);
 }
 
 const updateSelectedInternalProducts = (value) => {
@@ -149,14 +159,30 @@ const removeExternalProduct = (product) => {
       </div>
 
       <div class="mb-5">
-        <CustomSelectBox
-          :selected-item="selectedIngredient"
-          :options="ingredients"
-          :label="$t('TANK_MIX_FILTERS_VIEW_INGREDIENTS_CAPTION')"
-          item-key="id"
-          item-title="name"
-          @select="(value) => selectedIngredient = value"
+        <MixIngredientSelect
+          :selected="selectedIngredients"
+          @select="(value) => updateIngredients(value)"
         />
+
+        <div v-if="selectedIngredients.length > 0" class="market-chip-list">
+          <v-chip
+            class="ma-2 market-chip"
+            text-color="white"
+            v-for="(item, index) in selectedIngredients"
+            :key="index"
+          >
+            <span class="text-white text-md">
+              {{ item.name }}
+            </span>
+            <v-icon
+              big
+              right
+              @click.stop="removeIngredient(item)"
+              class="pl-2 text-white"
+            >mdi-close</v-icon
+            >
+          </v-chip>
+        </div>
       </div>
 
       <div class="mb-15">
